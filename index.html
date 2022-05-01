@@ -10,6 +10,7 @@
 <body>
     <div id="app">
         {{ number }}
+        <button v-on:click="countUp">カウントアップ</button>
     </div>
 
     <script>
@@ -18,6 +19,11 @@
                 el: "#app",
                 data: {
                     number: 0
+                },
+                methods: {
+                    countUp:function() {
+                        this.number++
+                    }
                 }
             }
         )
