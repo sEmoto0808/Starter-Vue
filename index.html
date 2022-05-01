@@ -31,6 +31,7 @@
         <div :class="color">v-bindの省略形</div>
         <button @click="countUp">カウントアップ(v-onの省略形)</button>
         <input type="text" v-model="color">
+        {{ custom_color }}
     </div>
 
     <script>
@@ -45,6 +46,11 @@
                 methods: {
                     countUp:function() {
                         this.number++
+                    }
+                },
+                computed: {
+                    custom_color:function() {
+                       return  this.color.toUpperCase();
                     }
                 }
             }
